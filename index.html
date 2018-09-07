@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Monthly Report</title>
+    <style type="text/css">
+
+      body,html {
+          margin:   0;
+          padding:  0;
+          -webkit-text-size-adjust: none;
+          background-color: #fff;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      header {
+        padding: 40px;
+        text-align: center;
+      }
+
+      header .logo {
+        text-decoration: none;
+      }
+
+      header .logo img {
+        height: 60px;
+        width: 165px;
+
+      }
+
+      .main {
+        background-color: #fff;
+        padding: 64px 52px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1,h2,h3,h4,h5,h6,p {
+        margin: 0;
+        color: #244264;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      hr {
+        border: none;
+        height: 3px;
+        background-color: #edeef0;
+        margin-bottom: 30px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .page-break-after {
+        page-break-after: always;
+      }
+
+      .report-info {
+        margin-bottom: 20px;
+      }
+
+      .report-info h1 {
+        color: #002635;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .report-info h3 {
+        color: #13a4db;
+        margin-bottom: 16px;
+      }
+
+      .report-info h4 {
+        color: #014358;
+      }
+
+      .report-summary {
+        margin-bottom: 20px;
+      }
+
+      .report-summary p {
+        margin-bottom: 10px;
+        color: #014358;
+        font-size: 18px;
+      }
+
+      .report-summary span {
+        color: #000;
+        font-weight: 600;
+      }
+
+      .social-media-image img {
+        vertical-align: middle;
+        margin-right: 25px
+      }
+
+
+      .social-media-section {
+        margin-bottom: 60px;
+      }
+
+      .social-media p {
+          font-weight: 600;
+          color: #014358;
+          display: inline-block;
+      }
+
+      .social-media-stats--name {
+        display: inline-block;
+        color: #244264;
+        font-weight: 700;
+      }
+
+      .social-media-stats--number {
+        display: inline-block;
+        color: #244264;
+        margin-right: 20px;
+        float: right;
+      }
+
+      .social-media-stats--percentage {
+        display: inline-block;
+        float: right;
+        font-weight: 700px;
+        padding-top: 7px;
+      }
+
+      .post-performance-container h2 {
+        font-weight: bold;
+        color: #244264;
+
+      }
+
+      .post-performance hr {
+        margin-bottom: 40px;
+        margin-top: 40px;
+      }
+
+      .post-performance:nth-of-type(3n+0) {
+        page-break-after: always;
+      }
+
+      .post-performance h3 {
+        font-weight: 500;
+        color: #014358;
+        margin-bottom: 5px;
+      }
+
+      .post-performance h4 {
+        color: #014358;
+        margin-top: 0px;
+        margin-bottom: 15px;
+      }
+
+      .post-performance-row img {
+        height: auto;
+        width: 100%;
+        max-width: 110px;
+        margin-right: 20px;
+      }
+
+      .post-performance-row p {
+        margin-bottom: 22px;
+        margin-top: 0px;
+        color: #718397;
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      .post-performance-row h3 {
+        font-weight: bold;
+        color: #244264;
+        margin-bottom: 20px
+      }
+
+      .green {
+        color: #07950a;
+      }
+
+      .red {
+        color: #cd2929;
+      }
+
+      .social-media-section table {
+        width: 100%;
+        border-spacing: 0;
+      }
+
+      .social-media-section table th {
+        text-align: center;
+        color: #fff;
+        background-color: #2a3a4c;
+        font-weight: 400;
+        padding: 15px 0 15px 15px;
+        border-radius: 0px;
+        border-left: none;
+      }
+
+      .social-media-section table td {
+        background: #f1f7f8;
+        font-weight: normal;
+        padding: 1rem;
+        color: #223142;
+        font-weight: bold;
+        text-align: center;
+
+        border-left: 1px solid #cfdbdd;
+      }
+
+      .social-media-section table tr:nth-of-type(2n) td {
+       background: white;
+      }
+
+      .social-media-section table td:last-of-type {
+        border-right: 1px solid #cfdbdd;
+      }
+
+      .social-media-section table tr:last-of-type td {
+        border-bottom: 1px solid #cfdbdd;
+      }
+
+      .delta-positive,
+      .delta-negative {
+        font-size: smaller;
+      }
+
+      .delta-negative {
+        color: #c0392b;
+      }
+      .delta-positive {
+        color: #27ae60;
+      }
+
+      .row [class^="col"] {
+        float: left;
+        margin: 0.5rem 2%;
+        min-height: 0.125rem;
+      }
+
+      .row::after {
+      	content: "";
+      	display: table;
+      	clear: both;
+      }
+
+      .row {
+        width: 100%;
+        position: relative;
+      }
+
+      .col-8 {
+        width: 60%;
+      }
+
+      .col-2 {
+        width: 12.66%;
+      }
+      .col-8 {
+        width: 62.66%;
+      }
+
+    </style>
+
+
+
+
+    <style media="screen">
+      html {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Performing Posts -->
+
+      <section class="post-performance-container">
+
+          <div class="row">
+            <div class="col-8">
+              <h2>Top Performing Posts</h2>
+            </div>
+            <div class="col-2 text-center">
+              <h5>Engagement</h5>
+            </div>
+            <div class="col-2 text-center">
+              <h5>Likes</h5>
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="row">
+          <div class="col-8">
+            <section class="post-performance">
+              <h3>Account Name</h3>
+              <h4>02/08/1987</h4>
+
+
+              <article class="post-performance-row">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/2010-kodiak-bear-1.jpg">
+
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in facilisis ligula, nec ultrices elit. Ut a lorem posuere, auctor justo at, luctus massa. Suspendisse sit amet elit vel neque consequat lacinia. Ut interdum pretium gravida. In id eros quis tellus iaculis ornare. Sed vel suscipit urna. Nunc venenatis viverra tempor. Vestibulum id auctor elit, vitae ultrices elit. Praesent sit amet elit nunc. Quisque et odio eu odio ultricies consequat et id nisi. Nulla venenatis condimentum ligula vel pretium. Aliquam commodo lectus in ullamcorper rhoncus. Nulla urna arcu, luctus vel dapibus et, interdum vel nisl. Etiam aliquam dapibus diam, quis dignissim turpis tempus in. Morbi ullamcorper ipsum est, quis hendrerit mauris mattis in.</p>
+
+              </article>
+
+            </section>
+          </div>
+          <div class="col-2 text-center">
+            1002
+          </div>
+          <div class="col-2 text-center">
+            1000
+          </div>
+        </div>
+        <hr>
+      </section>
+
+    </div>
+
+    <footer>
+
+    </footer>
+
+  </body>
+</html>
